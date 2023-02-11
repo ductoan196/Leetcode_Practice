@@ -12,4 +12,4 @@ public class LC374_GuessGame {
         }
         return left;
     }
-}
+//}
