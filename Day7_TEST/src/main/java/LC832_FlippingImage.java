@@ -1,7 +1,7 @@
 public class LC832_FlippingImage {
     //Tạo ra một mảng mới có số hàng, cột bằng với image
     //chạy vòng for cho từng hàng ở trong mảng
-    //trong mỗi hàng thực hiện đảo ngược vị trí các phần tử 
+    //trong mỗi hàng thực hiện đảo ngược vị trí các phần tử
 
         public int[][] flipAndInvertImage(int[][] image) {
             int row = image.length, col = image[0].length;
@@ -15,7 +15,7 @@ public class LC832_FlippingImage {
             int n = a.length;
             for(int i = 0; i < n; i++)
                 rs[i] = a[n - 1 - i] == 0 ? 1 : 0;
-            //Toán tử 3 ngôi: nếu tại vị trí được đảo ngược mà =0 thì rs tại đó =1, và còn lại thì =0
+            //nếu tại vị trí đảo ngược mà =0 thì rs tại đó =1, còn lại thì sẽ =0
             return rs;
         }
 
