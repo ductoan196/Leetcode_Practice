@@ -1,0 +1,19 @@
+public class LC112 {
+        public boolean hasPathSum(TreeNode root, int targetSum) {
+            if (root == null){
+                return false;
+            }
+            //xét trường hợp có duy nhất 1 phần tử
+            if (root.right == null && root.left == null& root.val ==targetSum){
+                return true;
+            }
+            //xét trường hợp có 2 nhánh -> hồi quy 
+            boolean sumLeftPath = hasPathSum(root.left,targetSum- root.val);
+            boolean sumRightPath = hasPathSum(root.right,targetSum-root.val);
+            if (sumLeftPath|| sumRightPath){ //chỉ cần 1 trong 2 nhánh true sẽ trả về true
+                return true;
+            }
+            return false;
+        }
+
+}
