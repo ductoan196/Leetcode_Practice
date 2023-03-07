@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class LC771 {
+    public int numJewelsInStones(String jewels, String stones) {
+        Set<Character> myHashSet = new HashSet<>();
+        int count = 0;
+        for(char c: jewels.toCharArray()){
+            if (!myHashSet.contains(c)){
+                myHashSet.add(c);
+            }
+        }
+        for(char c: stones.toCharArray()){
+            if (myHashSet.contains(c)){
+                count++;
+            }
+        }
+        return count;
+    }
+}

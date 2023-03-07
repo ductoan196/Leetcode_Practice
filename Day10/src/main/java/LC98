@@ -1,0 +1,23 @@
+public class LC78 {
+    public boolean isValidBST(TreeNode root) {
+        return isValidate(root,null,null);
+    }
+
+    private boolean isValidate(TreeNode node, Integer min, Integer max){
+        if (node == null){
+            return true;
+        }
+        if (node.left!= null&& node.left.val<min || node.right!=null&& node.right.val>max){
+            return false;
+        }
+        boolean isLeftValid = isValidate(node.left, min, node.val);
+        if (!isLeftValid){
+            return false;
+        }
+        boolean isRightValid = isValidate(node.right, node.val, max);
+        if (!isRightValid){
+            return false;
+        }
+        return true;
+    }
+}
